@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Онлайн-кружки школы: программирование, языки, шахматы и творчество из дома.">
+    <title>Онлайн-кружки - Навигатор</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+        <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+    </a>
+    <nav class="nav">
+        <a href="index.html#catalog">Кружки</a>
+        <a href="online.html">Онлайн</a>
+        <a href="games.html">Игры</a>
+        <a href="about.html">О проекте</a>
+    </nav>
+    <div class="header-actions">
+        <button class="icon-btn count-btn" id="favBtn" aria-label="Избранное" data-count="0"><i class="fa-solid fa-heart"></i></button>
+        <button class="icon-btn count-btn" id="scheduleBtn" aria-label="Моё расписание" data-count="0"><i class="fa-regular fa-calendar"></i></button>
+        <a href="index.html#quiz" class="btn btn-primary btn-sm">Подобрать кружок</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#catalog">Кружки</a>
+    <a href="online.html">Онлайн</a>
+    <a href="games.html">Игры</a>
+    <a href="about.html">О проекте</a>
+    <button class="btn btn-ghost" id="mobileFavBtn" style="margin-top:12px">Избранное</button>
+    <button class="btn btn-ghost" id="mobileScheduleBtn" style="margin-top:8px">Моё расписание</button>
+</div>
+
+<section class="hero hero-online">
+    <div class="hero-bg">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+    </div>
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <span class="eyebrow"><i class="fa-solid fa-wifi"></i> Занятия из дома</span>
+            <h1>Онлайн-кружки - <span class="grad">учись где удобно</span></h1>
+            <p>Подключайся к занятиям из дома: программирование, английский, шахматы и не только. Нужен только ноутбук и интернет.</p>
+            <div class="hero-perks">
+                <span><i class="fa-solid fa-check"></i> Записи занятий</span>
+                <span><i class="fa-solid fa-check"></i> Малые группы</span>
+                <span><i class="fa-solid fa-check"></i> Опытные педагоги</span>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-top">
+                <span class="pill">Онлайн-хит</span>
+                <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <div class="hero-card-img">
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=300&fit=crop" alt="Программирование">
+            </div>
+            <h3>Python с нуля</h3>
+            <p>Пишем первые программы, бота для Telegram и мини-игру. Записи занятий остаются навсегда.</p>
+            <div class="hero-card-tags"><span>7-11 класс</span><span>Среда, 18:00</span></div>
+            <div class="hero-card-foot">
+                <span class="online-tag"><i class="fa-solid fa-wifi"></i> Онлайн</span>
+                <a href="club.html?id=9" class="btn btn-ghost btn-sm">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <h2>Все онлайн-кружки</h2>
+            <p>Фильтруй по направлению и записывайся онлайн</p>
+        </div>
+        <div class="chips" id="onlineChips">
+            <button class="chip active" data-filter="all">Все</button>
+            <button class="chip" data-filter="tech">Техника и IT</button>
+            <button class="chip" data-filter="lang">Языки</button>
+            <button class="chip" data-filter="mind">Интеллект</button>
+            <button class="chip" data-filter="art">Творчество</button>
+            <button class="chip" data-filter="media">Медиа</button>
+        </div>
+        <div class="grid" id="onlineGrid" style="margin-top:36px"></div>
+        <div class="empty" id="onlineEmpty" hidden>
+            <i class="fa-regular fa-face-frown"></i>
+            <p>В этом направлении пока нет онлайн-кружков.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section online-how">
+    <div class="container">
+        <div class="section-head">
+            <h2>Как проходят онлайн-занятия</h2>
+            <p>Всё просто и удобно</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-icon"><i class="fa-solid fa-laptop"></i></div>
+                <h3>Подключайся</h3>
+                <p>Ссылка на Zoom приходит за 10 минут до занятия.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-icon"><i class="fa-solid fa-chalkboard-user"></i></div>
+                <h3>Занимайся</h3>
+                <p>Преподаватель ведёт занятие и отвечает на вопросы в чате.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-icon"><i class="fa-solid fa-video"></i></div>
+                <h3>Смотри запись</h3>
+                <p>Пропустил занятие - не страшно, запись доступна всем ученикам.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container cta-inner">
+        <div>
+            <h2>Онлайн - это удобно</h2>
+            <p>Оставь заявку - подберём онлайн-кружок под интересы.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn btn-light" id="ctaOnlineBtn">Оставить заявку</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+                <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+            </a>
+            <p class="footer-desc">Помогаем школьникам находить занятия по душе прямо в школе.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Разделы</h4>
+            <a href="index.html#catalog">Кружки</a>
+            <a href="online.html">Онлайн-кружки</a>
+            <a href="games.html">Игры</a>
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="footer-links">
+            <h4>Контакты</h4>
+            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <a href="mailto:hello@schoolclubs.ru">hello@schoolclubs.ru</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 Навигатор школьных кружков</span>
+        <span>Сделано с заботой о школьниках</span>
+    </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="modal" id="modal">
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="О проекте Навигатор школьных кружков: идея, технологии, функции и автор.">
+    <title>О проекте - Навигатор</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+        <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+    </a>
+    <nav class="nav">
+        <a href="index.html#catalog">Кружки</a>
+        <a href="online.html">Онлайн</a>
+        <a href="games.html">Игры</a>
+        <a href="about.html">О проекте</a>
+    </nav>
+    <div class="header-actions">
+        <button class="icon-btn count-btn" id="favBtn" aria-label="Избранное" data-count="0"><i class="fa-solid fa-heart"></i></button>
+        <button class="icon-btn count-btn" id="scheduleBtn" aria-label="Моё расписание" data-count="0"><i class="fa-regular fa-calendar"></i></button>
+        <a href="index.html#quiz" class="btn btn-primary btn-sm">Подобрать кружок</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#catalog">Кружки</a>
+    <a href="online.html">Онлайн</a>
+    <a href="games.html">Игры</a>
+    <a href="about.html">О проекте</a>
+    <button class="btn btn-ghost" id="mobileFavBtn" style="margin-top:12px">Избранное</button>
+    <button class="btn btn-ghost" id="mobileScheduleBtn" style="margin-top:8px">Моё расписание</button>
+</div>
+
+<section class="about-hero">
+    <div class="container">
+        <span class="eyebrow"><i class="fa-solid fa-circle-info"></i> О проекте</span>
+        <h1>Навигатор <span class="grad">школьных кружков</span></h1>
+        <p>Сайт, который помогает школьникам найти занятие по душе прямо в своей школе: смотреть каталог, сравнивать, читать отзывы и записываться онлайн.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#5b4bff,#8f7bff)"><i class="fa-solid fa-bullseye"></i></div>
+                <h3>Зачем этот сайт</h3>
+                <p>В школе много кружков, но узнать о них сложно: расписания висят на разных стендах, а про свободные места никто не знает. Навигатор собирает всё в одном месте, чтобы выбор занимал минуту, а не неделю.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#12c7a2,#5be0c2)"><i class="fa-solid fa-users"></i></div>
+                <h3>Для кого</h3>
+                <p>Для учеников 5-11 классов, которые ищут занятие по интересам. Для родителей, которым важно понимать, куда и когда ходит ребёнок. Для педагогов, которые хотят рассказать о своём кружке.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#ff7a59,#ff9f7a)"><i class="fa-solid fa-list-check"></i></div>
+                <h3>Что умеет</h3>
+                <p>Каталог с поиском и фильтрами по направлению, дню и классу. Избранное и личное расписание с проверкой пересечений. Сравнение до трёх кружков. Отзывы и рейтинги. QR-код и печать для офлайн-использования.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#a06bff,#c79bff)"><i class="fa-solid fa-code"></i></div>
+                <h3>Технологии</h3>
+                <p>HTML5 и CSS3 с адаптивной версткой. JavaScript без фреймворков. Данные хранятся в localStorage: избранное, расписание, отзывы, сравнение и просмотры остаются между визитами. Внешние библиотеки: Font Awesome для иконок и Google Fonts.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#2ecc71,#7be495)"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <h3>Фишки проекта</h3>
+                <p>Квиз подбора кружка по интересам. Проверка пересечений по времени. Мини-игры про школьные кружки. Тёмный дизайн, плавные анимации, мобильная адаптация. Всё работает офлайн, кроме картинок.</p>
+            </div>
+            <div class="about-card">
+                <div class="about-icon" style="background:linear-gradient(135deg,#151428,#3b3960)"><i class="fa-solid fa-user-astronaut"></i></div>
+                <h3>Об авторе</h3>
+                <p>Проект сделан для конкурса по веб-программированию «Веб-архитектор» в рамках мероприятия «ДвижИт». Тема: «Навигатор школьных кружков». Категория 13-15 лет. Автор: укажи своё имя и класс.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="padding-top:0">
+    <div class="container">
+        <div class="section-head">
+            <h2>Как это работает</h2>
+            <p>Три шага от идеи до записи</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h3>Найди</h3>
+                <p>Используй поиск, фильтры или пройди квиз подбора.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-icon"><i class="fa-solid fa-code-compare"></i></div>
+                <h3>Сравни</h3>
+                <p>Сравни до трёх кружков по времени, классу и месту.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+                <h3>Запишись</h3>
+                <p>Отправь заявку прямо со страницы кружка.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container cta-inner">
+        <div>
+            <h2>Готов попробовать?</h2>
+            <p>Открой каталог и найди свой первый кружок.</p>
+        </div>
+        <div class="cta-btns">
+            <a href="index.html#catalog" class="btn btn-light">К каталогу</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+                <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+            </a>
+            <p class="footer-desc">Помогаем школьникам находить занятия по душе прямо в школе.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Разделы</h4>
+            <a href="index.html#catalog">Кружки</a>
+            <a href="online.html">Онлайн-кружки</a>
+            <a href="games.html">Игры</a>
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="footer-links">
+            <h4>Контакты</h4>
+            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <a href="mailto:hello@schoolclubs.ru">hello@schoolclubs.ru</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 Навигатор школьных кружков</span>
+        <span>Сделано с заботой о школьниках</span>
+    </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="modal" id="modal">
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>

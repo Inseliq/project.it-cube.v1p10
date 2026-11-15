@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мини-игры про школьные кружки: угадай кружок по картинке и найди пару.">
+    <title>Мини-игры - Навигатор</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+        <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+    </a>
+    <nav class="nav">
+        <a href="index.html#catalog">Кружки</a>
+        <a href="online.html">Онлайн</a>
+        <a href="games.html">Игры</a>
+        <a href="about.html">О проекте</a>
+    </nav>
+    <div class="header-actions">
+        <button class="icon-btn count-btn" id="favBtn" aria-label="Избранное" data-count="0"><i class="fa-solid fa-heart"></i></button>
+        <button class="icon-btn count-btn" id="scheduleBtn" aria-label="Моё расписание" data-count="0"><i class="fa-regular fa-calendar"></i></button>
+        <a href="index.html#quiz" class="btn btn-primary btn-sm">Подобрать кружок</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#catalog">Кружки</a>
+    <a href="online.html">Онлайн</a>
+    <a href="games.html">Игры</a>
+    <a href="about.html">О проекте</a>
+    <button class="btn btn-ghost" id="mobileFavBtn" style="margin-top:12px">Избранное</button>
+    <button class="btn btn-ghost" id="mobileScheduleBtn" style="margin-top:8px">Моё расписание</button>
+</div>
+
+<section class="games-hero">
+    <div class="container">
+        <span class="eyebrow"><i class="fa-solid fa-gamepad"></i> Мини-игры</span>
+        <h1>Проверь, насколько хорошо ты знаешь <span class="grad">кружки</span></h1>
+        <p>Две игры: угадай кружок по картинке и найди пару. Играй один или с друзьями.</p>
+    </div>
+</section>
+
+<section class="section games-section">
+    <div class="container">
+        <div class="games-tabs">
+            <button class="game-tab active" data-game="guess"><i class="fa-solid fa-question"></i> Угадай кружок</button>
+            <button class="game-tab" data-game="match"><i class="fa-solid fa-clone"></i> Найди пару</button>
+        </div>
+
+        <div class="game-panel active" id="gameGuess">
+            <div class="game-header">
+                <div class="game-title">
+                    <h2>Угадай кружок по картинке</h2>
+                    <p>Выбери, какому кружку принадлежит изображение</p>
+                </div>
+                <div class="game-stats">
+                    <div class="game-stat"><span>Очки</span><b id="guessScore">0</b></div>
+                    <div class="game-stat"><span>Раунд</span><b id="guessRound">1 / 8</b></div>
+                </div>
+            </div>
+            <div class="guess-img-wrap">
+                <img id="guessImg" src="" alt="Кружок">
+            </div>
+            <div class="guess-options" id="guessOptions"></div>
+            <div class="game-result" id="guessResult" hidden>
+                <div class="result-icon" id="guessResultIcon"><i class="fa-solid fa-check"></i></div>
+                <h3 id="guessResultTitle">Верно!</h3>
+                <p id="guessResultText"></p>
+                <button class="btn btn-primary" id="guessNext">Следующий раунд</button>
+            </div>
+        </div>
+
+        <div class="game-panel" id="gameMatch">
+            <div class="game-header">
+                <div class="game-title">
+                    <h2>Найди пару</h2>
+                    <p>Открой две одинаковые картинки с кружками</p>
+                </div>
+                <div class="game-stats">
+                    <div class="game-stat"><span>Ходы</span><b id="matchMoves">0</b></div>
+                    <div class="game-stat"><span>Пары</span><b id="matchPairs">0 / 6</b></div>
+                </div>
+            </div>
+            <div class="match-board" id="matchBoard"></div>
+            <div class="game-result" id="matchResult" hidden>
+                <div class="result-icon"><i class="fa-solid fa-trophy"></i></div>
+                <h3>Победа!</h3>
+                <p id="matchResultText"></p>
+                <button class="btn btn-primary" id="matchRestart">Играть снова</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+                <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+            </a>
+            <p class="footer-desc">Помогаем школьникам находить занятия по душе прямо в школе.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Разделы</h4>
+            <a href="index.html#catalog">Кружки</a>
+            <a href="online.html">Онлайн-кружки</a>
+            <a href="games.html">Игры</a>
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="footer-links">
+            <h4>Контакты</h4>
+            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <a href="mailto:hello@schoolclubs.ru">hello@schoolclubs.ru</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 Навигатор школьных кружков</span>
+        <span>Сделано с заботой о школьниках</span>
+    </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="modal" id="modal">
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>

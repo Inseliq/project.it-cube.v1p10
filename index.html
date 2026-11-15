@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Навигатор школьных кружков: каталог, расписание, избранное, сравнение и запись на занятия.">
+    <title>Навигатор школьных кружков</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+    <a href="index.html" class="logo">
+        <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+        <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+    </a>
+    <nav class="nav">
+        <a href="#catalog">Кружки</a>
+        <a href="online.html">Онлайн</a>
+        <a href="games.html">Игры</a>
+        <a href="about.html">О проекте</a>
+    </nav>
+    <div class="header-actions">
+        <button class="icon-btn count-btn" id="favBtn" aria-label="Избранное" data-count="0"><i class="fa-solid fa-heart"></i></button>
+        <button class="icon-btn count-btn" id="scheduleBtn" aria-label="Моё расписание" data-count="0"><i class="fa-regular fa-calendar"></i></button>
+        <a href="#quiz" class="btn btn-primary btn-sm" id="headerQuizBtn">Подобрать кружок</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Меню"><span></span><span></span><span></span></button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#catalog">Кружки</a>
+    <a href="online.html">Онлайн</a>
+    <a href="games.html">Игры</a>
+    <a href="about.html">О проекте</a>
+    <button class="btn btn-ghost" id="mobileFavBtn" style="margin-top:12px">Избранное</button>
+    <button class="btn btn-ghost" id="mobileScheduleBtn" style="margin-top:8px">Моё расписание</button>
+    <a href="#quiz" class="btn btn-primary" id="mobileQuizBtn">Подобрать кружок</a>
+</div>
+
+<section class="hero">
+    <div class="hero-bg">
+        <span class="blob blob-1"></span>
+        <span class="blob blob-2"></span>
+        <span class="blob blob-3"></span>
+    </div>
+    <div class="container hero-inner">
+        <div class="hero-text">
+            <span class="eyebrow"><i class="fa-solid fa-sparkles"></i> Более 40 кружков - офлайн и онлайн</span>
+            <h1>Найди кружок <span class="grad">по душе</span> прямо в школе</h1>
+            <p>Робототехника, театр, шахматы, медиа, экология - всё в одном месте. Выбирай, записывайся и развивайся после уроков.</p>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="heroSearch" placeholder="Что тебе интересно? Например, «шахматы»">
+                <button class="btn btn-primary" id="heroSearchBtn">Искать</button>
+            </div>
+            <div class="hero-stats">
+                <div><b data-count="42">0</b><span>кружков</span></div>
+                <div><b data-count="9">0</b><span>направлений</span></div>
+                <div><b data-count="1200">0</b><span>детей занимаются</span></div>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-top">
+                <span class="pill">Топ недели</span>
+                <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
+            </div>
+            <div class="hero-card-img">
+                <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&h=300&fit=crop" alt="Робототехника">
+            </div>
+            <h3>Клуб робототехники «Шестерёнка»</h3>
+            <p>Собираем роботов, программируем и ездим на соревнования. Места ещё есть!</p>
+            <div class="hero-card-tags"><span>5-9 класс</span><span>Вторник, четверг</span></div>
+            <div class="hero-card-foot">
+                <div class="avatars"><span>А</span><span>М</span><span>К</span><span>+8</span></div>
+                <a href="club.html?id=1" class="btn btn-ghost btn-sm">Подробнее</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section quiz-section" id="quiz">
+    <div class="container">
+        <div class="quiz-wrap">
+            <div class="quiz-side">
+                <span class="eyebrow light"><i class="fa-solid fa-wand-magic-sparkles"></i> 60 секунд</span>
+                <h2>Не знаешь, куда пойти?</h2>
+                <p>Ответь на 5 коротких вопросов - подберём кружок под твои интересы. Без регистрации и звонков.</p>
+                <ul class="quiz-perks">
+                    <li><i class="fa-solid fa-check"></i> 5 вопросов</li>
+                    <li><i class="fa-solid fa-check"></i> Мгновенный результат</li>
+                    <li><i class="fa-solid fa-check"></i> 3 подходящих кружка</li>
+                </ul>
+                <button class="btn btn-light" id="startQuizBtn">Пройти опрос</button>
+            </div>
+            <div class="quiz-preview">
+                <div class="quiz-card-demo q1">
+                    <span class="q-tag">Вопрос 1</span>
+                    <p>Что тебе ближе?</p>
+                    <div class="q-options-demo"><span>Собирать</span><span>Выступать</span><span>Играть</span></div>
+                </div>
+                <div class="quiz-card-demo q2">
+                    <span class="q-tag">Вопрос 2</span>
+                    <p>Как проводишь свободное время?</p>
+                    <div class="q-options-demo"><span>С ноутбуком</span><span>С друзьями</span><span>С книгой</span></div>
+                </div>
+                <div class="quiz-card-demo q3">
+                    <span class="q-tag">Результат</span>
+                    <p><i class="fa-solid fa-trophy"></i> Твой кружок найден!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section games-teaser">
+    <div class="container">
+        <div class="games-banner">
+            <div class="games-banner-text">
+                <span class="eyebrow light"><i class="fa-solid fa-gamepad"></i> Развлечение</span>
+                <h2>Устал выбирать? Поиграй!</h2>
+                <p>Две мини-игры: угадай кружок по картинке и найди пару. Проверь, насколько хорошо ты знаешь школьные занятия.</p>
+                <a href="games.html" class="btn btn-light">Играть</a>
+            </div>
+            <div class="games-banner-cards">
+                <div class="game-mini-card"><i class="fa-solid fa-question"></i><span>Угадай кружок</span></div>
+                <div class="game-mini-card"><i class="fa-solid fa-clone"></i><span>Найди пару</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="directions">
+    <div class="container">
+        <div class="section-head">
+            <h2>Направления</h2>
+            <p>Девять направлений - от точных наук до сцены и спорта</p>
+        </div>
+        <div class="chips" id="chips">
+            <button class="chip active" data-filter="all">Все</button>
+            <button class="chip" data-filter="tech">Техника и IT</button>
+            <button class="chip" data-filter="science">Наука</button>
+            <button class="chip" data-filter="art">Творчество</button>
+            <button class="chip" data-filter="media">Медиа</button>
+            <button class="chip" data-filter="sport">Спорт</button>
+            <button class="chip" data-filter="mind">Интеллект</button>
+            <button class="chip" data-filter="eco">Экология</button>
+            <button class="chip" data-filter="lang">Языки</button>
+            <button class="chip chip-online" data-filter="online"><i class="fa-solid fa-wifi"></i> Онлайн</button>
+        </div>
+    </div>
+</section>
+
+<section class="section catalog" id="catalog">
+    <div class="container">
+        <div class="catalog-head">
+            <h2>Кружки школы</h2>
+            <div class="catalog-tools">
+                <div class="search search-sm">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="catalogSearch" placeholder="Поиск по названию или описанию">
+                </div>
+                <select id="daySelect" class="select">
+                    <option value="all">Любой день</option>
+                    <option value="Понедельник">Понедельник</option>
+                    <option value="Вторник">Вторник</option>
+                    <option value="Среда">Среда</option>
+                    <option value="Четверг">Четверг</option>
+                    <option value="Пятница">Пятница</option>
+                    <option value="Суббота">Суббота</option>
+                </select>
+                <select id="gradeSelect" class="select">
+                    <option value="all">Любой класс</option>
+                    <option value="5">5 класс</option>
+                    <option value="6">6 класс</option>
+                    <option value="7">7 класс</option>
+                    <option value="8">8 класс</option>
+                    <option value="9">9 класс</option>
+                    <option value="10">10 класс</option>
+                    <option value="11">11 класс</option>
+                </select>
+                <select id="sortSelect" class="select">
+                    <option value="default">По умолчанию</option>
+                    <option value="rating">По рейтингу</option>
+                    <option value="seats">Где есть места</option>
+                </select>
+            </div>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>
+            <i class="fa-regular fa-face-frown"></i>
+            <p>Ничего не нашли. Попробуйте другой запрос или сбросьте фильтры.</p>
+            <button class="btn btn-ghost" id="resetFilters">Сбросить фильтры</button>
+        </div>
+    </div>
+</section>
+
+<section class="section how" id="how">
+    <div class="container">
+        <div class="section-head">
+            <h2>Как это работает</h2>
+            <p>Три простых шага до первого занятия</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <span class="step-num">01</span>
+                <div class="step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h3>Выбери кружок</h3>
+                <p>Пройди опрос или отфильтруй по направлению и расписанию.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <div class="step-icon"><i class="fa-solid fa-file-pen"></i></div>
+                <h3>Отправь заявку</h3>
+                <p>Заполни короткую форму на странице кружка - займёт минуту.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <div class="step-icon"><i class="fa-solid fa-hand"></i></div>
+                <h3>Приходи на занятие</h3>
+                <p>Руководитель свяжется и подскажет, что взять с собой.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section achievements" id="achievements">
+    <div class="container">
+        <div class="section-head">
+            <h2>Достижения наших ребят</h2>
+            <p>Кружки - это не только хобби, но и реальные результаты</p>
+        </div>
+        <div class="ach-grid">
+            <div class="ach-card">
+                <div class="ach-icon" style="background:linear-gradient(135deg,#5b4bff,#8f7bff)"><i class="fa-solid fa-trophy"></i></div>
+                <b>17</b>
+                <span>призовых мест на городских олимпиадах за год</span>
+            </div>
+            <div class="ach-card">
+                <div class="ach-icon" style="background:linear-gradient(135deg,#12c7a2,#5be0c2)"><i class="fa-solid fa-robot"></i></div>
+                <b>4</b>
+                <span>команды робототехников вышли в региональный финал</span>
+            </div>
+            <div class="ach-card">
+                <div class="ach-icon" style="background:linear-gradient(135deg,#ff7a59,#ff9f7a)"><i class="fa-solid fa-masks-theater"></i></div>
+                <b>6</b>
+                <span>спектаклей театральной студии на большой сцене</span>
+            </div>
+            <div class="ach-card">
+                <div class="ach-icon" style="background:linear-gradient(135deg,#a06bff,#c79bff)"><i class="fa-solid fa-medal"></i></div>
+                <b>9</b>
+                <span>медалей волейбольной секции на турнирах</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section reviews" id="reviews">
+    <div class="container">
+        <div class="section-head">
+            <h2>Отзывы</h2>
+            <p>Что говорят ученики и родители</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review">
+                <div class="review-head">
+                    <div class="review-avatar">А</div>
+                    <div><b>Аня, 7 класс</b><span>Театральная студия</span></div>
+                </div>
+                <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>«Раньше боялась сцены, а теперь главная роль в спектакле. Ирина Владимировна помогает раскрыться каждому.»</p>
+            </div>
+            <div class="review">
+                <div class="review-head">
+                    <div class="review-avatar">Д</div>
+                    <div><b>Дмитрий, папа шестиклассника</b><span>Робототехника</span></div>
+                </div>
+                <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>«Сын перестал сидеть в телефоне - собирает роботов и рассказывает про датчики. Спасибо Алексею Петровичу!»</p>
+            </div>
+            <div class="review">
+                <div class="review-head">
+                    <div class="review-avatar">М</div>
+                    <div><b>Марина, 9 класс</b><span>Медиацентр</span></div>
+                </div>
+                <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                <p>«Научилась монтировать видео и брать интервью. Теперь веду школьные новости и готовлюсь к поступлению на журфак.»</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section faq" id="faq">
+    <div class="container">
+        <div class="section-head">
+            <h2>Частые вопросы</h2>
+            <p>Коротко о том, что важно знать</p>
+        </div>
+        <div class="accordion" id="accordion">
+            <div class="acc-item">
+                <button class="acc-head">Кружки платные? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body"><p>Большинство кружков бесплатные - это школьные занятия. Онлайн-кружки и отдельные студии платные, цена указана на странице кружка.</p></div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-head">Как записаться? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body"><p>Открой страницу кружка, нажми «Отправить заявку» и заполни форму. Руководитель свяжется в течение дня.</p></div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-head">Можно ли ходить в два кружка? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body"><p>Да, если расписания не пересекаются. Сайт сам предупредит, если время занятий совпадает.</p></div>
+            </div>
+            <div class="acc-item">
+                <button class="acc-head">Чем отличаются онлайн-кружки? <i class="fa-solid fa-chevron-down"></i></button>
+                <div class="acc-body"><p>Занятия проходят в Zoom или на платформе кружка, можно подключаться из дома. Нужен только ноутбук и интернет.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta">
+    <div class="container cta-inner">
+        <div>
+            <h2>Не знаешь, с чего начать?</h2>
+            <p>Пройди опрос или оставь заявку на консультацию - поможем подобрать кружок.</p>
+        </div>
+        <div class="cta-btns">
+            <button class="btn btn-light" id="ctaQuizBtn">Пройти опрос</button>
+            <button class="btn btn-outline-light" id="ctaBtn">Консультация</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <a href="index.html" class="logo footer-logo">
+                <span class="logo-mark"><i class="fa-solid fa-compass-drafting"></i></span>
+                <span class="logo-text">Навигатор<small>школьных кружков</small></span>
+            </a>
+            <p class="footer-desc">Помогаем школьникам находить занятия по душе прямо в школе.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Разделы</h4>
+            <a href="#catalog">Кружки</a>
+            <a href="online.html">Онлайн-кружки</a>
+            <a href="games.html">Игры</a>
+            <a href="about.html">О проекте</a>
+        </div>
+        <div class="footer-links">
+            <h4>Контакты</h4>
+            <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            <a href="mailto:hello@schoolclubs.ru">hello@schoolclubs.ru</a>
+        </div>
+    </div>
+    <div class="container footer-bottom">
+        <span>© 2026 Навигатор школьных кружков</span>
+        <span>Сделано с заботой о школьниках</span>
+    </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>
+
+<div class="modal" id="modal">
+    <div class="modal-card">
+        <button class="modal-close" id="modalClose" aria-label="Закрыть"><i class="fa-solid fa-xmark"></i></button>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-circle-check"></i><span></span></div>
+
+<script src="script.js"></script>
+</body>
+</html>
